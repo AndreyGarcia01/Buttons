@@ -1,0 +1,319 @@
+/* Centralizar o conteúdo na tela */
+body, html {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #D3D3D3; 
+}
+
+
+/* Botões de opção */
+.btn-options {
+    display: block;             /* Garante que os botões ocupem uma linha inteira */
+    margin: 10px auto;          /* Adiciona margem vertical e centraliza horizontalmente */
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: black;
+    background-color: #D3D3D3;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: -530px;              /* Ajuste a largura para 80% do contêiner */
+}
+
+
+
+
+
+#dias-ate-feriado {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#dias-ate-feriado input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#dias-ate-feriado button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+
+/* Estilos gerais para o painel do conversor */
+.conversor-panel {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    max-width: 100%;
+    text-align: center;
+    display: none; /* Começa invisível */
+    margin: 50px auto;
+}
+
+/* Título do painel do conversor */
+.tittle-conversor {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: black; /* Cor azul para o título */
+    text-align: left;
+    position: relative;
+}
+
+/* Ícone de voltar */
+.tittle-conversor svg {
+    top: -1px;
+    left: 130px;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    color: black;
+}
+
+/* Formulário do conversor */
+.form-conversor {
+    margin-bottom: 20px;
+     
+}
+
+.input-conversor {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+.select-conversor {
+    width: 20%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 230px;
+    outline: none;
+}
+
+.resposta-con{
+
+    margin:1px;
+    top: 361px;
+    left: 615px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 25px;
+    width: 225px;
+     
+}
+
+
+
+/* Botão de conversão */
+.btn-conversor {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 80%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-conversor:hover {
+    background-color: #0056b3;
+}
+
+/* Resultado da conversão */
+.resultado-conversor {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Mensagem de erro, caso haja */
+.resultado-conversor.error {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
+
+/* Css do Cronometro */
+/* Estilo para o painel de cronômetro */
+.painel-tempo {
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 40px;
+    width: 200px;
+    display: inline-block;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    margin: 20px;
+}
+
+/* Estilo do ícone de seta (voltar) */
+.bi-arrow-left-cron {
+    position: relative;
+    left: 23px;
+    cursor: pointer;
+}
+
+/* Estilo para o fundo do cronômetro */
+.fundo-cron {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título do cronômetro */
+.tittle-cron {
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 4px 5px #eee, 0 0 1px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os botões */
+.btns-cron {
+    margin-top: 20px;
+}
+
+.btn-cro {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-cro:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/*------------------------------------------------------------------  */
+
+
+/* Css da Calculadora */
+.container {
+   text-align: center;
+   padding: 20px;
+   background-color: white;
+   border-radius: 15px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tittle {
+   font-family: Arial, sans-serif;
+   text-shadow: 2px 4px 5px #eee, 0 0 1px;
+   font-size: 26px;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+}
+
+.show-ans {
+   border: 1px solid #000;
+   border-radius: 10px;
+   height: 40px;
+   width: 300px;
+   background-color: white;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: right;
+   font-size: 24px;
+   padding: 10px;
+   margin-bottom: 20px;
+}
+
+.fundo {
+   display: flex;
+   justify-content: center;
+}
+
+.painel {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+   width: 160px;
+   margin-right: 20px;
+}
+
+.number, .operation {
+   border: 1px solid #000;
+   border-radius: 10px;
+   height: 50px;
+   width: 50px;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 24px;
+   cursor: pointer;
+}
+
+.number:hover, .operation:hover {
+   background-color: #f1f1f1;
+}
+
+.operacoes {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 10px;
+   width: 120px;
+}
+
+.operation {
+   background-color: #f1f1f1;
+}
+
+.operation:hover {
+   background-color: #ddd;
+}
+
+/* CSS para o ícone da seta */
+.bi-arrow-left {
+    position: relative;
+    left: 45px; /* Desloca o ícone para a esquerda */
+    cursor: pointer;
+}

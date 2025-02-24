@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css.css">
+      <script src="js.js" defer></script>
+      <title>Buttons</title>
+   </head>
+   <body>
+
+      <!-- Contêiner dos Botões -->
+      <div class="container-btn" style="position: absolute;">
+         <button class="btn-options" onclick="showCalc()">Calculadora</button>
+         <button class="btn-options" onclick="showCron()">Cronômetro</button>
+         <button class="btn-options" onclick="showConverter()">Conversor de Moeda</button>
+         <button class="btn-options" onclick="showFeriado()">Dias até o Feriado</button> 
+      </div>
+
+      <!-- Painel do Conversor de Moeda -->
+      <div id="conversor-panel" class="conversor-panel" style="display: none;">
+         <div class="tittle-conversor">
+            Conversor de Moedas
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left-cron" viewBox="0 0 16 16" onclick="hideCon()" style="cursor: pointer;">
+               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+         </div>
+
+         <div class="form-conversor">
+            <input type="number" id="valor" class="input-conversor" placeholder="Valor em reais">
+            <div class="select-resposta-container">
+               <select id="moeda" class="select-conversor">
+                  <option value="USD">Dólar</option>
+                  <option value="EUR">Euro</option>
+                  <option value="GBP">Libra Esterlina</option>
+               </select>
+            </div>
+            <div class="resposta-con" style="position: absolute;"></div>
+            <button class="btn-conversor" onclick="converter()">Converter</button>
+         </div>
+
+         <div id="resultado" class="resultado-conversor"></div>
+      </div>
+
+      <!-- Painel do Cronômetro -->
+      <div id="fundo-cron" class="fundo-cron" style="display:none;">
+         <div class="tittle-cron">Cronômetro
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left-cron" viewBox="0 0 16 16" onclick="hideCron()" style="cursor: pointer;">
+               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+         </div>
+
+         <div id="painel-tempo" class="painel-tempo">00:00</div>
+
+         <div class="btns-cron">
+            <button class="btn-cro" onclick="startCron()">Start</button>
+            <button class="btn-cro" onclick="stopCron()">Stop</button>
+            <button class="btn-cro" onclick="resetCron()">Reset</button>
+         </div>
+      </div>
+
+      <!-- Painel da Calculadora -->
+      <div class="container" id="container" style="display: none;">
+         <div class="tittle">Calculadora
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" onclick="hideCalc()" style="cursor: pointer;">
+               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+         </div>
+
+         <div class="show-ans" id="display"></div>
+
+         <div class="fundo">
+            <div class="painel">
+               <div class="number" onclick="appendNumber(1)">1</div>
+               <div class="number" onclick="appendNumber(2)">2</div>
+               <div class="number" onclick="appendNumber(3)">3</div>
+               <div class="number" onclick="appendNumber(4)">4</div>
+               <div class="number" onclick="appendNumber(5)">5</div>
+               <div class="number" onclick="appendNumber(6)">6</div>
+               <div class="number" onclick="appendNumber(7)">7</div>
+               <div class="number" onclick="appendNumber(8)">8</div>
+               <div class="number" onclick="appendNumber(9)">9</div>
+               <div class="number" onclick="appendNumber(0)">0</div>
+            </div>
+
+            <div class="operacoes">
+               <div class="operation" onclick="appendOperation('/')">/</div>
+               <div class="operation" onclick="appendOperation('*')">*</div>
+               <div class="operation" onclick="appendOperation('-')">-</div>
+               <div class="operation" onclick="appendOperation('+')">+</div>
+               <div class="operation" onclick="clearDisplay()">C</div>
+               <div class="operation" onclick="calculateResult()">=</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Painel de Contagem de Dias Até o Feriado -->
+      <div id="dias-ate-feriado" style="display: none;">
+         <h3>Contagem de Dias Até o Feriado
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" onclick="hideHol()" style="cursor: pointer;">
+               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+         </h3>
+
+         <label for="data-feriado">Escolha a data do feriado:</label>
+         <input type="date" id="data-feriado">
+         <button onclick="calcularDias()">Calcular Dias</button>
+         <p id="resultado-feriado"></p>
+      </div>
+
+   </body>
+</html>
